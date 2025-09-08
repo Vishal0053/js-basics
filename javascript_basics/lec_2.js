@@ -25,5 +25,6 @@ let empty = null
 // undefined - "when the value is not assigned usually the undefined data type"
 let undefi
 console.log(typeof undefi);
-
- 
+// Symbol
+let unique = Symbol('dishant')
+console.log(typeof unique);
