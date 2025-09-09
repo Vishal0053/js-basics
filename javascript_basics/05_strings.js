@@ -18,5 +18,11 @@ const Gamename = new String("karan")
 
 let Str1 = "kar"
 let str2 = "an"
+console.log(Str1.__proto__)
 console.log(`concated String is ${Str1.concat(str2)}`);
-console.log(``)
+console.log(`charector at a location using charat ${Str1.charAt(2)}`)
+console.log(`charector at a location using at ${Str1.at(1)}`);
+console.log();
+
+
+
