@@ -25,7 +25,7 @@ newArr.shift()
 
 const myarr = newArr.join();
 
-// console.log(myarr);
+console.log(myarr);
 console.log('A ', newArr);
 
 const myn1 = newArr.slice(0,3);
