@@ -1,0 +1,61 @@
+java Script Execution context
+
+1. - GEC - Global Execution Context - "is contened within this keyword and can be seen and accessed through it"
+2. - FEC - FUnctional Execution Context
+3. - EEC - Eval Execution Context
+
+-------------How javaScript code Executes-----------------------
+
+- Memory Creation Phase
+- Execution phase 
+consider the following code 
+
+1. let num1 = 100
+2. let num2 = 200
+3. function addTwo(val1,val2) {
+4.     total = num1+num2;       
+5.     return total;
+6. }
+7.
+8. const result1 = addTwo(num1);
+9. const result2 = addTwo(num1);
+
+Now let's see how the code get's executed in javaScript
+
+1 - {} - firstly GEC global Execution Context is created.
+2 - "memory phase" comes in which memory is alovated for the variables and components.
+    - num1 -> undefined
+    - num2 -> undefined
+    - function -> defination 
+    - result1 -> undefined
+    - result2 -> undefined
+3 - "Execution phase" comes in which the value is assigned and function calling takes place.
+    now in execution phase.
+    num1 <- 100
+    num2 <- 200
+    "the function is called"
+    addNum() // function is called then the another NVE is invoked 
+        -- NVE(new Variable Environ ment) + Execution thread
+                -- "Memory Phase"
+                    - num1  ->undefined
+                    - num2  ->undefined
+                    - total ->undefined
+                -- "Execution phase"
+                    - num1  <- 100
+                    - num2  <- 200
+                    - total <- 300
+        -- Deletion
+    // now the function is invoked one more time then the simimlar actions will be performed for this function as well
+
+----------------here lets learn about call stack ----------------------------------------
+consider we have methods named as One(),two(),three()
+-now while executing these method they will execute one by one 
+1. firstly one method will go to call stack and then after its execution it will leave 
+2. Secondly two method will execute and leave from call stack 
+3. thirdly three method will execute and leave from call stack 
+
+
+                    ________________
+                    global execution
+// now consider two and three methods are within one method two contains three and is contained by one
+// then in this case the one method will go to call stack first and then two and then three and then three wil be executed first then second and then one and leave once execution is complete
